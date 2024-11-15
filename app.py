@@ -6,7 +6,7 @@ app.config['SECRET_KEY'] = 'kYUs,0.VK,s]'  # Replace with a strong secret key
 
 # Email server configurations
 app.config['MAIL_SERVER'] = 'mail.tikteam.work'
-    app.config['MAIL_PORT'] = 2079
+app.config['MAIL_PORT'] = 2079
 app.config['MAIL_USE_TLS'] = False  # TLS is not recommended with the provided settings
 app.config['MAIL_USE_SSL'] = False  # SSL is not recommended with the provided settings
 app.config['MAIL_USERNAME'] = 'contact@tikteam.work'
