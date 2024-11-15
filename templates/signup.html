@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - TikTeam.Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/" class="logo">TikTeam</a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#video">Watch</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Join TikTeam.Work</h1>
+            <p>Become part of a community where creators connect, collaborate, and grow together.</p>
+        </div>
+    </section>
+
+    <!-- Signup Form Section -->
+    <section class="signup">
+        <div class="container">
+            <h2>Request access</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <p class="{{ category }}">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <form method="POST">
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+                <button type="submit">Request access</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TikTeam.Work | All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
