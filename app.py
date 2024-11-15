@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for, flash,render_template_string
 from flask_mail import Mail, Message
+from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask_mail import Mail, Message
+from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'kYUs,0.VK,s]'  # Replace with a strong secret key
@@ -14,6 +17,47 @@ app.config['MAIL_PASSWORD'] = 'kYUs,0.VK,s]'
 app.config['MAIL_DEFAULT_SENDER'] = 'contact@tikteam.work'
 
 mail = Mail(app)
+
+
+# Initialize LoginManager
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+
+# Dummy user store
+users = {
+    'admin': {'password': 'admin_password'}  # Replace with actual user data
+}
+
+# User class
+class User(UserMixin):
+    def __init__(self, id):
+        self.id = id
+
+# User loader callback
+@login_manager.user_loader
+def load_user(user_id):
+    return User(user_id)
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = users.get(username)
+        if user and user['password'] == password:
+            user_obj = User(username)
+            login_user(user_obj)
+            flash('Login successful!', 'success')
+            return redirect(url_for('index'))
+        else:
+            flash('Invalid credentials. Please try again.', 'danger')
+    return render_template('login.html')
+
+@app.route('/generate')
+@login_required
+def tiktok():
+    return render_template('tiktok.html')
 
 
 @app.route('/')
