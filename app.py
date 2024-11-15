@@ -41,6 +41,9 @@ def load_user(user_id):
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))  # Redirect to home if already logged in
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -49,7 +52,11 @@ def login():
             user_obj = User(username)
             login_user(user_obj)
             flash('Login successful!', 'success')
-            return redirect(url_for('index'))
+            next_page = request.args.get('next')
+            if next_page:
+                return redirect(next_page)
+            else:
+                return redirect(url_for('index'))  # Default redirect if no 'next' parameter
         else:
             flash('Invalid credentials. Please try again.', 'danger')
     return render_template('login.html')
