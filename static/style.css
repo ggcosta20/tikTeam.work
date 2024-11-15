@@ -1,0 +1,241 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #f7f7f7;
+}
+
+/* Navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links li {
+    display: inline;
+}
+
+nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav .nav-links a:hover {
+    color: #00b5e2;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #00b5e2, #ff0099);
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero .cta-btn {
+    background-color: #ff0099;
+    padding: 10px 25px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-btn:hover {
+    background-color: #00b5e2;
+}
+
+/* About Section */
+.about {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Video Section */
+.video {
+    background-color: #f1f1f1;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.video h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.video iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* Join Section */
+.join {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.join h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.join p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.join .cta-btn {
+    background-color: #00b5e2;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.join .cta-btn:hover {
+    background-color: #ff0099;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1em;
+    margin: 0;
+}
+.highlight {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0099; /* Neon Pink */
+    text-align: center;
+    margin-bottom: 20px;
+}
+.signup {
+    background-color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.signup h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.signup form {
+    display: inline-block;
+    text-align: left;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.signup label {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.signup input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.signup button {
+    background-color: #00b5e2;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.signup button:hover {
+    background-color: #ff0099;
+}
