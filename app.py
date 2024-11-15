@@ -26,7 +26,7 @@ login_manager.login_view = 'login'
 
 # Dummy user store
 users = {
-    'admin': {'password': 'admin_password'}  # Replace with actual user data
+    'admin': {'password': 'pa77W0rd2024'}  # Replace with actual user data
 }
 
 # User class
