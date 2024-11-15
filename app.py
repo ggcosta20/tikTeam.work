@@ -26,7 +26,7 @@ login_manager.login_view = 'login'
 
 # Dummy user store
 users = {
-    'admin': {'password': 'pa77W0rd2024'}  # Replace with actual user data
+    'admin': {'password': 'admin_password'}  # Replace with actual user data
 }
 
 # User class
@@ -54,11 +54,10 @@ def login():
             flash('Invalid credentials. Please try again.', 'danger')
     return render_template('login.html')
 
-@app.route('/generate')
+@app.route('/tiktok')
 @login_required
 def tiktok():
     return render_template('tiktok.html')
-
 
 @app.route('/')
 def index():
